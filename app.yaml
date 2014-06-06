@@ -1,0 +1,33 @@
+application: sn-set
+version: art-depo-1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+
+# index.html
+- url: /
+  static_files: static/index.html
+  upload: index\.html
+
+# static content
+- url: /.*
+  static_dir: static
+
+skip_files:
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^static/node_modules/.*
+- ^static/test/.*
+- .*/tmp/.*
+- ^ga/.*
+
+
